@@ -1,0 +1,29 @@
+<!-- Handelbars Label Template -->
+<script id="stream_header" type="x-handlebars-template">
+	<h1>{{greeting}}</h1>
+	<button id="createBtn" class="btn btn-sm btn-primary button-createDigest">{{createTxt.text}}</button>
+	<button class="btn btn-sm btn-primary button-getDigest">{{loadTxt.text}}</button>
+	<button class="btn btn-sm btn-primary button-getSharable">{{shareTxt.text}}</button>
+</script>
+
+<script id="stream_inputDigest" type="x-handlebars-template">
+	<div class="cmtWrap">
+		<div><input id="cmt" class="inputClass" name="commTxt" type="text" placeholder="{{placeText}}" /></div>
+		<div><a class="closeClass" href="#">X</a></div>
+	</div>
+</script>
+
+<script id="stream_getDigest" type="x-handlebars-template">
+	{{text}}<br />
+	<strong><small>Posted {{timestamp}}</small></strong>
+	{{#if comments}}
+		<ul>
+			{{#each comments}}
+				<li>
+					<small><strong>{{author_desc}}</strong> - {{timestamp}}</small><br />
+					{{text}}
+				</li>
+			{{/each}}
+		</ul>
+	{{/if}}
+</script>

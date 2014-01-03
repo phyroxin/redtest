@@ -1,2 +1,2 @@
-Node.js & Backbone.js version of my survey app.
-TODO: Display results and make editable.
+Node, Backbone, Mongodb chat example
+TODO: test bed for next project

@@ -1,0 +1,27 @@
+<!-- Handelbars Label Template -->
+<script id="stream_getDigest" type="x-handlebars-template">
+		{{text}}<br />
+		<strong><small>Posted {{timeago timestamp}}</small></strong>
+		{{#if comments}}
+			<ul>
+				{{#each comments}}
+					<li>
+						<small><strong>{{author_desc}}</strong> - {{timeago timestamp}}</small><br />
+						{{text}}
+					</li>
+				{{/each}}
+			</ul>
+		{{/if}}
+</script>
+
+<!-- Underscore Templates -->
+<script type="template" id="selectInputTemp">
+	<div class="questionBlock">
+		<select name="q<%= order %>" id="q<%= order %>">
+			   <option></option>
+			<% _.each(options, function(opt) { %>
+			   <option><%= opt %></option>
+			<%}); %>
+		</select>
+	</div>
+</script>
