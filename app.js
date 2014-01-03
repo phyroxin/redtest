@@ -20,7 +20,8 @@ function compile(str, path){
  * All environments
  *========================================================
  */
-app.set('port', process.env.PORT || 3000);
+app.set('ipaddr', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8080);
 app.set('views', __dirname + '/views');
 app.set('view engine','jade');
 app.use(express.favicon());
@@ -44,7 +45,7 @@ if ('development' == app.get('env')) {
  * Start server
  *========================================================
  */
-var server = http.createServer(app).listen(app.get('port'), function(){
+var server = http.createServer(app).listen(app.get('port'), app.get('ipaddr'), function(){
 	console.log('Express server listening on port '+ app.get('port'));
 });
 

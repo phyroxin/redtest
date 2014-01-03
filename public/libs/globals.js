@@ -5,7 +5,7 @@
  */
 var URL = (function(){
 	var url		  = '//'+window.location.hostname+'/';
-	var socketURI = '//node.dev/';
+	//var socketURI = '//node.dev/';
 	//var socketURI = '//node-backbone-rd.eu01.aws.af.cm/';
 	return {
 		 GET: function(){
